@@ -71,7 +71,7 @@ class Model(Document):
         if isinstance(id, ObjectId):
             return id
 
-        if isinstance(id, basestring) and OBJECTIDEXPR.match(id):
+        if isinstance(id, str) and OBJECTIDEXPR.match(id):
             return ObjectId(id)
 
         return id

@@ -1,9 +1,11 @@
 import inspect
 from inflection import camelize
-from document import Document
-from model import Model, NotFoundException
-from schema import Schema
-from schemer import Mixed, ValidationException, Array
+from .document import Document
+from .model import Model, NotFoundException
+from .schema import Schema
+from schemer.exceptions import ValidationException
+from schemer.extension_types import Mixed
+from schemer import Array
 
 
 def _module_name_from_previous_frame(num_frames_back):
