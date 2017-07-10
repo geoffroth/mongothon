@@ -171,8 +171,8 @@ class TestScopeBuilder(TestCase):
         bldr = ScopeBuilder(mock_model, [scope_a, scope_b])
         results = bldr.scope_a().scope_b()
         it = results.__iter__()
-        self.assertEqual({'_id': 1}, it.next())
-        self.assertEqual({'_id': 2}, it.next())
+        self.assertEqual({'_id': 1}, it.__next__())
+        self.assertEqual({'_id': 2}, it.__next__())
         mock_model.find.assert_called_once_with(
             {"thing": "blah", "woo": "ha"},
             None)

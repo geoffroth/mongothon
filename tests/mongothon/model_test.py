@@ -240,10 +240,10 @@ class TestModel(TestCase):
         cars = self.Car.find({'make': 'Peugeot'}, limit=2)
         iter1 = cars.__iter__()
         iter2 = cars.__iter__()
-        self.assertIsInstance(iter1.next(), self.Car)
-        self.assertIsInstance(iter2.next(), self.Car)
-        self.assertIsInstance(iter1.next(), self.Car)
-        self.assertIsInstance(iter2.next(), self.Car)
+        self.assertIsInstance(iter1.__next__(), self.Car)
+        self.assertIsInstance(iter2.__next__(), self.Car)
+        self.assertIsInstance(iter1.__next__(), self.Car)
+        self.assertIsInstance(iter2.__next__(), self.Car)
 
 
     def test_find_by_id(self):
